@@ -13,7 +13,7 @@ import {Image, StyleSheet, ImageBackground, ScrollView,SafeAreaView} from "react
 import Background from './assets/images/huskybackground.png'
 import bone from './assets/images/bone-4.png'
 import donut from './assets/images/donut.png'
-import dog from './assets/images/huskydog.png'
+import dog from './assets/images/doglogo.png'
 
 //define styles to be used in the various components.
 const styles = StyleSheet.create({
@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
 });
 
 const Banner = () => (
-    <Layout style={{flex: .5, flexDirection: 'row', justifyContent:'center', alignItems: 'center', marginTop: 50 }}>
-        {/*<Image  style={styles.backgroundImage} source={Background}/>*/}
-        <Text category='h1'>HuskyApp</Text>
-    </Layout>
+    <SafeAreaView style={{alignItems: 'center', marginBottom: 50}}>
+        <Text category='h1'>Husky Bank</Text>
+        <Image source={dog} resizeMode={'contain'} style={{width:200, height:100}}/>
+     </SafeAreaView>
 );
 
 const LoansCard = () => {
@@ -58,7 +58,7 @@ const LoansCard = () => {
 
     return <Layout style={{marginBottom: 20, marginRight: 15, marginLeft: 15}}>
         <Card header={header} style={styles.cardBackground} >
-            <Image source={bone}  />
+            <Image source={bone} resizeMode={'contain'} style={{height: 100}}/>
         </Card>
     </Layout>
 };
@@ -82,7 +82,7 @@ const SpendingCard = () => {
 
     return <Layout style={{marginRight: 15, marginLeft: 15}}>
         <Card header={header} style={styles.cardBackground} >
-            <Image source={donut} resizeMode={'center'} />
+            <Image source={donut} resizeMode={'contain'} style={{height:200}} />
         </Card>
     </Layout>
 }
@@ -91,17 +91,13 @@ const App = () => {
 
     const [selectedIndex, setSelectedIndex] = React.useState(0);
     return <ApplicationProvider mapping={mapping} theme={lightTheme} style={styles.container}>
-        {/*<SafeAreaView>*/}
         <ScrollView style={{flex: 1, flexDirection: 'column'}}>
             <Image  style={styles.backgroundImage} source={Background}/>
             <Banner/>
             <LoansCard/>
             <IncomeCard/>
             <SpendingCard/>
-
-            {/*</ImageBackground>*/}
         </ScrollView>
-        {/*</SafeAreaView>*/}
         <BottomNavigation selectedIndex={selectedIndex}
                           onSelect={setSelectedIndex}>
             <BottomNavigationTab title='Overview'/>
