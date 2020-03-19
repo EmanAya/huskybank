@@ -172,11 +172,83 @@ function LoanScreen() {
 
 function IncomeScreen() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Image style={{ height: screenHeight, width: screenWidth, position: 'absolute' }}
                    source={require('./assets/images/background.png')}
             />
-            <Text style={{ fontSize: 30 }}>This is the IncomeScreen!</Text>
+
+            <ScrollView style={{ flex: 1 }}>
+
+            <Card style={{  borderRadius: '20', backgroundColor: '#5A4A99', top: 20, width: 400, marginLeft: 1 }}>
+                <Card.Title rowContainer={{ flexDirection: 'row' }} titleStyle={{ color: '#fff', marginTop: 5, marginLeft: 10, fontSize: 30 }} title="Income" />
+                <Divider style={{ backgroundColor: '#fff', height: 1 }} />
+                <Card.Content>
+                    <View rowContainer={{ alignItems: 'center' }}>
+                        <Text style={{ textAlign: 'center', marginTop: 20, fontSize: 25, color: '#fff' }}>Credit:
+                            <Text>                        $1000</Text>
+                        </Text>
+                        <Text style={{ textAlign: 'center', marginTop: 20, fontSize: 25, color: '#fff' }}>Debit:
+                            <Text>                        $5000</Text>
+                        </Text>
+                        <Text style={{ textAlign: 'center', marginBottom: 10, marginTop: 20, fontSize: 25, color: '#fff' }}>Cash:
+                            <Text>                         $1500</Text>
+                        </Text>
+                    </View>
+
+                </Card.Content>
+            </Card>
+
+            <View style={{ backgroundColor: '#5A4A99', width: 110, height: 35, borderRadius: 15, top: 35, left: 140}}>
+                <TouchableOpacity
+                    style={{}}
+                    activeOpacity={0.5}>
+                    <Text style={{ top: 4, color: '#fff', fontSize: 20, marginLeft: 19 }}> Update</Text>
+                </TouchableOpacity>
+            </View>
+
+            <Card
+                style={{ borderRadius: '20', backgroundColor: '#5A4A99', top: 80, width: 400, marginLeft: 1 }}>
+                <Card.Title rowContainer={{ flexDirection: 'row' }}
+                            titleStyle={{ color: '#fff', width: screenWidth, fontSize: 23, top: 2, marginLeft: 0, marginRight: 10 }} title="  + Personal Goals"></Card.Title>
+                <Divider style={{ backgroundColor: '#fff', height: 1 }} />
+
+                <Card.Content>
+                    <View style={{ width: screenWidth }}>
+                        <Text style={{ color: '#fff', fontSize: 20, top: 5, bottom: 0, marginLeft: screenWidth / 3.5, marginTop: 40 }}>Vacation Fund</Text>
+                        <Text style={{ color: '#fff', fontSize: 18, top: -20, bottom: 0, marginLeft: screenWidth / 3.5, marginTop: 30 }}> $200  /  $300</Text>
+                        <Image
+                            source={require('./assets/images/white-bone-3.png')}
+                            style={{ marginBottom: 30, top:-40 }} />
+
+                        <Text style={{ color: '#fff', fontSize: 20, top: 5, bottom: 0, marginLeft: screenWidth / 3.7, marginTop: -40 }}>Concert Tickets</Text>
+                        <Text style={{ color: '#fff', fontSize: 18, top: -20, bottom: 0, marginLeft: screenWidth / 3.2, marginTop: 30 }}> $0  /  $375</Text>
+                        <Image
+                            source={require('./assets/images/white-bone-1.png')}
+                            style={{ marginBottom: 30, top:-40 }} />
+
+                        <Text style={{ color: '#fff', fontSize: 20, top: 5, bottom: 0, marginLeft: screenWidth / 2.8, marginTop: -40}}>New Car</Text>
+                        <Text style={{ color: '#fff', fontSize: 18, top: -20, bottom: 0, marginLeft: screenWidth / 3.8, marginTop: 30 }}> $2500  /  $5000</Text>
+                        <Image
+                            source={require('./assets/images/white-bone-2.png')}
+                            style={{ marginBottom: -80, top:-40 }} />
+                    </View>
+                </Card.Content>
+
+                <View style={{top:160, width:140, marginTop: 20, flexWrap:'nowrap',flexDirection:"row"}}>
+                    <Text style={{ left: 30,width: 150, marginBottom: 0, fontSize: 20, color: '#5A4A99' }}>
+                        “Good job keeping up with your goals!” *ruff*
+                    </Text>
+                </View>
+            </Card>
+
+                <View>
+                    <Image
+                        style={{marginLeft:180,height: 280, width: 220, marginTop: 120, marginBottom: 40}}
+                        source={require('./assets/images/HuskyModel.png')} />
+                </View>
+
+
+            </ScrollView>
         </View>
     );
 }
